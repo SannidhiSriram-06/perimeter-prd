@@ -1,17 +1,17 @@
 # Perimeter: v1 Product Requirements Document
 
-This repo holds the v1 PRD for **Perimeter**, a self-hosted incident-triage tool for Kubernetes. Perimeter was built as a team capstone project. The PRD says what to build next, in what order, and how we'll know it works, starting from an evidence-based account of what the project actually does today.
+The v1 PRD for [Perimeter](https://github.com/SannidhiSriram-06/perimeter), a self-hosted Kubernetes incident-triage tool built as a six-person team capstone.
 
-## Core argument
+When an alert fires, Perimeter works out which services are causally linked to the alerting one, drafts a root-cause report from the evidence, and checks the draft's structured claims against that evidence before a human reviews it. This document defines what v1 should do next, in what order, and how we will know it works.
 
-- **Be honest about the starting point.** About 40% of the original proposal is built, and everything the engine reasons about is still mock telemetry. The PRD separates what is built, built with limits, and not built.
-- **The promise has to be true before it is marketed.** Perimeter's claim is drafts you can audit: scoping is a deterministic graph walk, and the draft's structured claims are checked against the evidence. Today the free-text parts of a draft are not checked, so v1 prioritizes labelling verified versus unverified content (S6) and measuring accuracy on real fault injection (S5) over new features.
-- **Sequence by evidence and effort.** Stories are ranked with RICE using stated judgment-call estimates, and open assumptions (time saved, whether data egress is the real blocker) are listed as things to validate with users.
+## What the PRD argues
+
+- **Where the product stands.** The proposal is roughly 40% built, and the engine still runs only on mock telemetry. Section 2 separates what is built, what is built with limits, and what is not built.
+- **What v1 has to fix first.** The pitch is drafts you can audit, but the free-text parts of a draft are not fact-checked today. The priority is labelling verified versus unverified content (S6) and measuring accuracy with real fault injection (S5), ahead of new features.
+- **How it is prioritized.** Stories are ranked with RICE, and the estimates are marked as judgment calls. Open assumptions, such as the time saved per incident and whether data egress is the real adoption blocker, are listed for validation with users.
 
 ## Contents
 
-- [PRD.pdf](PRD.pdf): the PRD with figures, for reading
-- [PRD.md](PRD.md): the same document as Markdown
-- `assets/`: figures, captured from the running code repo (screenshots of the real stack on mock telemetry, the repo's own diagram, and its existing wireframes)
-
-Code repo: https://github.com/SannidhiSriram-06/perimeter
+- [PRD.pdf](PRD.pdf): the full document with figures
+- [PRD.md](PRD.md): the same document in Markdown
+- `assets/`: the figures, taken from the running Perimeter repo (mock telemetry, not production data)
